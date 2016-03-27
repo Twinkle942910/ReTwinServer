@@ -1,6 +1,7 @@
 package com.twinkle.retwin.server;
 
 import com.twinkle.retwin.server.config.WebConfig;
+import com.twinkle.retwin.server.repository.RemindRepository;
 import org.springframework.web.WebApplicationInitializer;
 import org.springframework.web.context.ContextLoaderListener;
 import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;

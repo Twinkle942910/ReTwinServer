@@ -1,22 +1,28 @@
 package com.twinkle.retwin.server.controller;
 
 import com.twinkle.retwin.server.entity.Remind;
+import com.twinkle.retwin.server.repository.RemindRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Date;
+import java.util.List;
 
 @RestController
 @RequestMapping("/retwin")
 public class ReminderController
 {
+    @Autowired
+    private RemindRepository remindRepository;
 
     @RequestMapping(value = "/get", method = RequestMethod.GET)
     @ResponseBody
     public Remind getReminder()
     {
+        List<Remind> all = remindRepository.findAll();
         return createMockRemind();
     }
 
